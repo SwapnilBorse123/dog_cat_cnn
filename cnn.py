@@ -21,6 +21,12 @@ classifier.add(Convolution2D(32, 3, 3, input_shape = (64, 64, 3), activation = '
 # Generally, as a rule of thumb we take a 2*2 window to avoid loss of features
 classifier.add(MaxPooling2D(pool_size = (2, 2)))
 
+# Adding a second convolutional layer to improve accuracy
+classifier.add(Convolution2D(32, 3, 3, activation = 'relu'))
+
+classifier.add(MaxPooling2D(pool_size = (2, 2)))
+
+
 # Step 3 - Flattening
 classifier.add(Flatten())
 
